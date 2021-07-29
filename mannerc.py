@@ -20,4 +20,4 @@ def clntconn(host, port, key):
     print('Received: ', repr(data.decode()))
 
 # Create connection
-clntconn('127.0.0.1', 65432, encrypt.hash_key(encrypt.zest_key(),'This!Password¿IsSecure_♣'))
+clntconn('127.0.0.1', 65432,'This!Password¿IsSecure_♣')

@@ -22,7 +22,8 @@ def servconn(host, ports):
         while True:
             # 1024 bytes buffer
             data = conn.recv(1024)
-            authproc.accesscomm_record(authproc.establish_accesscomm(),"Username123",authproc.hash_key(authproc.zest_key(), data))
+            #authproc.accesscomm_record(authproc.establish_accesscomm(),"Username123",authproc.hash_key(authproc.zest_key(), data))
+            print(repr(data).encode)
 
             # If data not present close connection
             if not data:
