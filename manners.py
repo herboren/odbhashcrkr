@@ -1,4 +1,5 @@
-import socket, authproc, pickle
+import json
+import socket, authproc
 
 # Server
 def servconn(host, ports):
@@ -27,10 +28,10 @@ def servconn(host, ports):
             if not data:
                 break
             else:
-                ukey = pickle.loads(data.decode('utf-8').strip())
-                print(f'{ukey[0]}:{ukey[1]}')
-                
-                #authproc.accesscomm_record(authproc.establish_accesscomm(),'username123',authproc.hash_key(authproc.zest_key(), 'This!Password¿IsSecure_♣'))
+                #ukey = data.decode('utf-8').strip()
+                ukey = json.loads(data.decode('utf-8').strip())
+                print(ukey)
+                #authproc.accesscomm_record(authproc.establish_accesscomm(),ukey[0],authproc.hash_key(authproc.zest_key(), ukey[1]))
                 # Send data to socket
                 conn.sendall(data)
 
