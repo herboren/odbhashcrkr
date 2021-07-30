@@ -13,7 +13,7 @@ def clntconn(host, port, user, key):
         # Encode string send bytes
         #sock.sendall(str(ukey).encode('utf-8'))
         sock.sendall(jsonstr.encode('utf-8'))
-
+ 
         # Send data to socket
         data = sock.recv(1024)
 
