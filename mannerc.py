@@ -1,5 +1,4 @@
 import socket
-import authproc as encrypt
 
 # Server
 def clntconn(host, port, key):
@@ -11,7 +10,7 @@ def clntconn(host, port, key):
         sock.connect((host,port))
         
         # Encode string send bytes
-        sock.sendall(str.encode(key)) 
+        sock.sendall(str(key).encode('utf-8')) 
 
         # Send data to socket
         data = sock.recv(1024)
