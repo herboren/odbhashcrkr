@@ -1,4 +1,4 @@
-import socket
+import socket, pickle
 
 # Server
 def clntconn(host, port, user, key):
@@ -6,12 +6,12 @@ def clntconn(host, port, user, key):
     # Create socket object, omits Close()
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
          
-        ukey = [user, key]
+        ukey = {user, key}
         # Connect using IPV4 AF
         sock.connect((host,port))
         
         # Encode string send bytes
-        sock.sendall(str(ukey).encode('utf-8')) 
+        sock.sendall(pickle.dumps((ukey).encode('utf-8')))
 
         # Send data to socket
         data = sock.recv(1024)
