@@ -22,12 +22,15 @@ def servconn(host, ports):
         while True:
             # 1024 bytes buffer
             data = conn.recv(1024)
-            authproc.accesscomm_record(authproc.establish_accesscomm(),"Username123",authproc.hash_key(authproc.zest_key(), data.decode('utf-8').strip()))            
-
+                        
             # If data not present close connection
             if not data:
                 break
             else:
+                ukey = data.decode('utf-8').strip()       
+                print(f'{ukey[0]}::{ukey[1]}')
+                
+                #authproc.accesscomm_record(authproc.establish_accesscomm(),'username123',authproc.hash_key(authproc.zest_key(), 'This!Password¿IsSecure_♣'))
                 # Send data to socket
                 conn.sendall(data)
 
