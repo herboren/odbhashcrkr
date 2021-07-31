@@ -1,5 +1,7 @@
 import socket, json
 
+HOST = '127.0.0.1'
+PORT = 65432
 # Server
 def clntconn(host, port, user, key):
     
@@ -23,4 +25,4 @@ def clntconn(host, port, user, key):
 print('Password Requirement: a-z, A-Z, 0-9, !@#$%^&*()_+-=\n Example: Pass_word!24.')
 
 # Create connection
-clntconn('127.0.0.1', 65432,'Username_1','This()_+-=Password@IsSecure$&')
+clntconn(HOST, PORT,'Username_1','This()_+-=Password@IsSecure$&')
