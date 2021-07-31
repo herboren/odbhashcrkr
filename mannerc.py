@@ -1,4 +1,5 @@
-import socket, json
+from pasgen import pasgen
+import socket, json, wrdgen, pasgen
 
 HOST = '127.0.0.1'
 PORT = 65432
@@ -22,7 +23,5 @@ def clntconn(host, port, user, key):
     # Decode message and print
     print('Received: ', repr(data.decode()))
 
-print('Password Requirement: a-z, A-Z, 0-9, !@#$%^&*()_+-=\n Example: Pass_word!24.')
-
 # Create connection
-clntconn(HOST, PORT,'Username_1','This()_+-=Password@IsSecure$&')
+clntconn(HOST, PORT, wrdgen.wrdgen(), pasgen.pasgen(32))
