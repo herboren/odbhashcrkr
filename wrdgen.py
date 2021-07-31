@@ -6,12 +6,14 @@ CONSAN = ['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w
 VOWELS = ['a','e','i','o','u','y']
 NUMBER = [0,1,2,3,4,5,6,7,8,9]
 
+# Ensure random number doesnt return as zero
 def rndnum():    
     end = 0
     while end == 0:
         end = ((random.choice(NUMBER)) * round(random.random() / 2 * 1000))
     return str(end)
 
+# Generate predfined word using BIGRAM (Change to TRIGRAM for longer word)
 def wrdgen():
     wrd = random.sample(CONSAN,1)
     wrd.insert(1,random.choice(VOWELS))
@@ -19,9 +21,4 @@ def wrdgen():
     wrd.append(random.choice(VOWELS))
     wrd.append(random.choice(CONSAN))
     wrd.append(rndnum())
-
     return "".join(wrd)
-
-
-
-print(wrdgen())
