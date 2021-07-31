@@ -1,6 +1,9 @@
 import json
 import socket, authproc
 
+HOST = '127.0.0.1'
+PORT = 65432
+
 # Server
 def servconn(host, ports):
     
@@ -36,4 +39,4 @@ def servconn(host, ports):
                 conn.sendall(data)
 
 # Start Server
-servconn('127.0.0.1', 65432)
+servconn(HOST, PORT)
