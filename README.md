@@ -1,2 +1,2 @@
-# odbhashcrkr
- Create and store salt+hashes in db, then crack passwords via hash table
+# odbhashstore
+ Create and store salt+hashes in db
