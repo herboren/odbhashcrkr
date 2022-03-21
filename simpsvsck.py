@@ -9,7 +9,7 @@ def servconn(host, ports):
     
     # Create socket object, omits Close()
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-         
+
         # A pair (host, port) is used
         # for the AF_INET address family
         sock.bind((host,ports))
